@@ -1,0 +1,34 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+
+aside.sidebar img.round_image{
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	margin-bottom: 1em;
+}
+
+.contact {
+	margin-bottom:-0.7em;
+	float: right;
+	font-size: 0.8em;
+	p,a{
+		text-decoration: none;
+		color: #f2f2f2;
+		margin-bottom: 0.5em;
+		span{
+			color: rgb(187, 187, 187);
+		}
+	}
+}
+
+body>nav form .search{
+	background-color: rgb(245, 229, 236);
+}
+
+body>nav a:hover{
+	color:desaturate(lighten(#d3226c, 55), 5);;
+}

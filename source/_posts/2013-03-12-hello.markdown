@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Hello, World!"
+date: 2013-03-12 19:13
+comments: true
+categories: 
+---
+
+I have decided, somewhat under the influence of [37signals brilliant book, Rework](http://37signals.com/rework) that its time I start documenting all the even vaguely clever webby things I get up to day to day. This blog is where that documentation will happen.
+
+At this stage, I have no idea whether this will be of use to anyone else in the world, but I do know one thing; **almost everything I've learned in web development in the last two years has been from reading the blogs of people more experienced than I**. And knowing that, I figure its about time I at least opened up to the possibility I could for once be the giant on whom's shoulders another budding web developer stands.
+
+So read on, I hope you find it helpful, *even just a little*.
+
+Matt
