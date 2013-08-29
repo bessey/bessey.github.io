@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "life in the valley"
 sharing: true
 ---
+#Life in the Valley
 <div id="blog-index" class="category">
 {% assign index = true %}
 {% for post in site.categories["svip"] %}
