@@ -1,6 +1,6 @@
 <section>
 	<img alt="me" src="/images/me.jpg" class="round_image">
-	<p><strong>Hi, I'm Matt, a 3rd year Computer Science student</strong>, studying towards an MEng at Bristol University, and a freelance web developer.</p>
-
-	<p>I get up to quite a bit, but spend most of my time developing, DJing, and tinkering around in terminals. </p>
+	<p>
+    <strong>Hi, I'm Matt, a Computer Scientist student</strong> at Bristol University, currently taking a year out of my studies to work for <a href="http://caring.com">Caring.com</a> in San Mateo, CA, thanks to the **Silicon Valley Internship Program**.
+  </p>
 </section>
