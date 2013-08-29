@@ -3,7 +3,7 @@ layout: page
 ---
 # DJing
 
-I love DJing and am the Vice President of Bristol Uni's DJ Society. We try to encourage students to give DJing a try, and if they like it, teach them from the basics through to advanced techniques in digital DJing.
+I love DJing and used to be the Vice President of [Bristol Uni's DJ Society](http://djsoc.co.uk). We try to encourage students to give DJing a try, and if they like it, teach them from the basics through to advanced techniques in digital DJing.
 
 <div class="float_right">
   <iframe src="http://www.mixcloud.com/widget/follow/?u=http%3A%2F%2Fwww.mixcloud.com%2Fmattbessey%2F&amp;amp;h=160&amp;amp;w=280&amp;amp;faces=on" width="280px" height="160px" style="border:none;" frameborder="0" scrolling="no"> </iframe>
