@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Surreal"
+date: 2013-09-28 18:11
+comments: true
+categories: svip
+---
+
+As I woke up this morning, horrifically hungover from yet another 'work hard, play harder' Friday night, to a team of Asian men disassembling all the furniture in our bedroom, I couldn't help but reflect on what an incredibly brilliant and bizarre few weeks its been. This situation at least is somewhat explainable; Vic, the guy that runs this hacker house, is being evicted because unsurprisingly a 3 bedroom flat is not well designed for 15 people to stay in! We found this out while flat hunting... when we saw *the flat we were currently sat in* on craigslist.
+
+<!-- more -->
+
+So in two days time we're being kicked out, and in the meantime the flat has been emptied of all but critical items, which apparently means just mattresses. I'm really not exaggerating! This is our living room right now:
+
+{% img /images/vics_place_bed.jpg 'My current living situation' %}
+
+Not to worry though, as we have a new place and will be moving in in a couple of days time. It's just me and [Chris H.](http://sqwiggle.me/) here right now, were it just me I think this would be the point at which one disappears into isolated depression, but as a pair, it's not too bad. It's actually amusing to be sat in bed staring at a room devoid of any material possessions, and remarking "We are some of the luckiest twenty-something year olds right now, and yet here we are with... *nothing*. How the fuck did this happen!?"
+
+I've been having moments of reflection like that a lot recently. Just the day before this, per the CEO's request, I exercised my one real non computer hobby, DJing, at the office quarterly party. Before I got here, coding by day and dropping the bass by night was one of the romantic images I had, and to my surprise it seems on track for becoming a reality! When you're stood on the balcony with half the staff of the company bopping to your song selection, you can't help but reflect on the surreality of it all.
+
+{% img /images/dj_caring.jpg 'False Economy and Abelution' %}
+
+Now I just need to start talking to some promoters and see if I can't get a gig or two...
