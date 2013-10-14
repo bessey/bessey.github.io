@@ -10,6 +10,8 @@ categories: svip
 
 {% img /images/flat_bedroom.jpg 'My rather bare bedroom' %}
 
+<!-- more -->
+
 And the combo open plan living and dining room, complete with some flatmates:
 
 {% img /images/flat_living_room.jpg 'The living / dining room' %}
