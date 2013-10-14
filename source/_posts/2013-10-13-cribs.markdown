@@ -20,6 +20,6 @@ This house is actually bizarrely similar to my old place in Bristol. Its built o
 
 {% img /images/flat_view.jpg 'The view from the back door' %}
 
-Its also similar to Bristol in being located in a neighbourhood that's conveniently near the Mission, (where a great deal of nightlife is), but just far enough out that you can sleep uninterrupted, very similar to Clifton really, perhaps teats why I'm so fond of the place!
+Its also similar to Bristol in being located in a neighbourhood that's conveniently near the Mission, (where a great deal of nightlife is), but just far enough out that you can sleep uninterrupted, very similar to Clifton really, perhaps that's why I'm so fond of the place!
 
 So its official, I have a place, and there's a ton of floor space, so now whoever you are, you have no excuse not to come visit. Except perhaps the air fare.
