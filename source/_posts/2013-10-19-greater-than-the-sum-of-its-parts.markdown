@@ -17,7 +17,7 @@ Although many startups have products based purely in the web, increasingly there
 3. Get in car when you see it arrive!
 4. Get out at your destination. No payment, it happens automatically through the app.
 
-Its like living in the future, honestly. And it doesn't end their! Shopping too has been digitised to an even greater extent than in the UK, thanks to [Instacart](http://instacart.com) a service that lets you shop at one website for food from 4 separate supermarket chains. Not only that, but delivery time is way faster than the UK, generally 1-2 **hours**. And unlike in the UK, you'll be called before delivery begins with notification of substitutions so you can change them *before* they arrive.
+Its like living in the future, honestly. And it doesn't end there! Shopping too has been digitised to an even greater extent than in the UK, thanks to [Instacart](http://instacart.com) a service that lets you shop at one website for food from 4 separate supermarket chains. Not only that, but delivery time is way faster than the UK, generally 1-2 **hours**. And unlike in the UK, you'll be called before delivery begins with notification of substitutions so you can change them *before* they arrive.
 
 Even dating has been distilled into its purest form, thanks to [Tinder](http://www.gotinder.com/). I hear Tinder is picking up in the UK now, so perhaps you've heard of it. If not, Tinder would be best described as a "hot or not" app that ends in the two of you being put in contact if you both rate each other as "hot". The experience is so efficient its unsettling, though of course as with all dating services the gender ratio leans heavily toward men. 
 
