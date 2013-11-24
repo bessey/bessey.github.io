@@ -12,7 +12,7 @@ Time for some serious business. Buzzfeed level serious. Today we're talking abou
 
 ### A Choc By Any Other Name
   
-In the US, this parses for a Milky Way bar:
+In the US, this passes for a Milky Way bar:
 
 {% img /images/choc/milky_way.jpg 'An American Milky Way bar' %}
 
