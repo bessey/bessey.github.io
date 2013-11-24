@@ -12,9 +12,9 @@ categories: svip
 
 Its been a few days since the 48 hour coding grind that was the [Launch Hackathon](http://hackathon.launch.co), and I think I've caught up on enough sleep to attempt a cohesive paragraph or two. Launch prided itself on being the largest hackathon ever, with 1,500 applicants. They didn't *all* show, but it was certainly huge.
 
-{% img /images/launch_crowd.jpg 'The hacking room' %}
-
 <!-- more -->
+
+{% img /images/launch_crowd.jpg 'The hacking room' %}
 
 That room is where I spent the entirety of my weekend. From Friday to Sunday night, this was my home. No beds, no showers, just me, my onesie, and my laptop. 10 of the SVIP crew took part, split into 3 teams, so we represented the brand well!
 
