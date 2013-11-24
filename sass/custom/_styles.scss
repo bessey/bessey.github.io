@@ -30,5 +30,15 @@ body>nav form .search{
 }
 
 body>nav a:hover{
-	color:desaturate(lighten(#d3226c, 55), 5);;
+	color:desaturate(lighten(#d3226c, 55), 5);
+}
+
+article {
+	p {
+		text-align: justify;
+	}
+	img {
+		display: block;
+		margin: auto;
+	}
 }
