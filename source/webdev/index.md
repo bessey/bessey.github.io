@@ -1,5 +1,7 @@
 ---
 layout: page
+description: "My web development experience."
+keywords: matt, matthew, bessey, ruby, web developer, software engineer
 ---
 # Web Development
 I am primarily a Ruby on Rails developer, working with HTML5, CSS3, JS. Other languages and frameworks I am familiar with include *Django, jQuery, MySQL, PHP, Sass, and Markdown*. I also have extensive knowledge of languages not traditionally associated with web thanks to my degree. 

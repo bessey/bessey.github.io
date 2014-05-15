@@ -1,7 +1,9 @@
 ---
 layout: page
+description: "My DevOps experience."
+keywords: matt, matthew, bessey, devops, full stack, software engineer
 ---
-# Dev Ops
+# DevOps
 
 As well as [web development](/webdev.html) I am firmly familiar with systems administration. Since I first started developing in 2009, I've managed the servers that the sites I've created were hosted on.
 

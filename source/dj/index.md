@@ -1,5 +1,7 @@
 ---
 layout: page
+description: "Listen to my mixes."
+keywords: matt, matthew, bessey, dj, mixcloud
 ---
 # DJing
 
