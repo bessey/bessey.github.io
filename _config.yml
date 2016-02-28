@@ -11,3 +11,6 @@ github_username:  bessey
 markdown: kramdown
 # Custom
 permalink: /blog/:year/:month/:day/:title/
+
+disqus_short_name: besseysblog
+disqus_show_comment_count: false
