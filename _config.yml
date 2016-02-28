@@ -9,8 +9,11 @@ github_username:  bessey
 
 # Build settings
 markdown: kramdown
+
 # Custom
 permalink: /blog/:year/:month/:day/:title/
 
 disqus_short_name: besseysblog
 disqus_show_comment_count: false
+
+google_analytics_tracking_id: UA-39945482-1
