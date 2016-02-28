@@ -1,10 +1,11 @@
 ---
 layout: page
+title: Web Dev
 description: "My web development experience."
 keywords: matt, matthew, bessey, ruby, web developer, software engineer
 ---
 # Web Development
-I am primarily a Ruby on Rails developer, working with HTML5, CSS3, JS. Other languages and frameworks I am familiar with include *Django, jQuery, MySQL, PHP, Sass, and Markdown*. I also have extensive knowledge of languages not traditionally associated with web thanks to my degree. 
+I am primarily a Ruby on Rails developer, working with HTML5, CSS3, JS. Other languages and frameworks I am familiar with include *Django, jQuery, MySQL, PHP, Sass, and Markdown*. I also have extensive knowledge of languages not traditionally associated with web thanks to my degree.
 
 I focus on development over design, though I'm no stranger to it. If you'd like to discuss freelance work, please [throw me an email](mailto:bessey@gmail.com) or [message me on LinkedIn](http://uk.linkedin.com/in/mattbessey).
 
