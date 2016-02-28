@@ -12,22 +12,22 @@ The vast majority of what you need to know is covered in the Carrierwave documen
 
 The one bit of advice that was not clear to be till delving into the Carrierwave docs was this: the first argument to the `mount_uploader` argument dictates the column name in which the filename of your upload is expected to be held. <!-- more -->For example:
 
-``` ruby app/models/artist.rb
+{% highlight ruby %} # app/models/artist.rb
   mount_uploader :image, ArtistUploader
 
-```
+{% endhighlight %}
 
 Will check `@artist.image` for text. Now if you migrated from paperclip, and accessed your images previously through `@artist.image`, you will *not* have an `image` field in your `artists` table. What you will have, containing that exact information, is an `image_file_name` field.
 
 So all that needs to be done, is a column rename! Or if that's not an option and you just want to test out Carrierwave, you could also change `mount_uploader :image, ...` to `mount_uploader :image_file_name, ...`. My migration was as follows:
 
-``` ruby migration_to_carrierwave.rb
+{% highlight ruby %} # migration_to_carrierwave.rb
 class PaperclipToCarrierwave < ActiveRecord::Migration
   def change
   	rename_column :artists, :image_file_name, :image
   	rename_column :releases, :image_file_name, :image
   end
 end
-```
+{% endhighlight %}
 
 Note the use of `change` to allow for two way migrations should we switch back for whatever reason.

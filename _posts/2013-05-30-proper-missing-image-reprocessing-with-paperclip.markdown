@@ -15,47 +15,47 @@ Unfortunately, that's as far as that file goes. It does not store per record gra
 
 Not only can this be stopped and effectively resumed (that is it will never reprocess an image that has already been processed), but if an error is raised during the reprocessing step, it will entirely delete the image from the record, as we assume there has been some kind of corruption between the record and its S3 files.
 
-``` ruby admin_tools.rb
+{% highlight ruby %} # admin_tools.rb
 
 class AdminTools
 
-	# For reprocessing Paperclip images, when certain styles are missing.
-	# Had to do it myself because their rake seems to crash for unknown reasons.
-	# This also has the advantage of checking if the file exists rather than just assuming all don't.
-	# We assume if the large image is missing, we need to reprocess this item.
-	# AdminTools.reprocess_missing_images Class, :image_size
-	def self.reprocess_missing_images klass, missing_style
-		klass.find_each do |inst|
-			rep = false
-			puts "START #{inst.id}"
-			unless inst.image.present?
-				next
-			end
-			image = inst.image(missing_style)
-			begin
-				actual = open(image)
-			rescue
-				rep = true
-			end
-			if actual.is_a?(StringIO) or !rep
-				puts "SKIP #{inst.id}"
-				next
-			end
+  # For reprocessing Paperclip images, when certain styles are missing.
+  # Had to do it myself because their rake seems to crash for unknown reasons.
+  # This also has the advantage of checking if the file exists rather than just assuming all don't.
+  # We assume if the large image is missing, we need to reprocess this item.
+  # AdminTools.reprocess_missing_images Class, :image_size
+  def self.reprocess_missing_images klass, missing_style
+    klass.find_each do |inst|
+      rep = false
+      puts "START #{inst.id}"
+      unless inst.image.present?
+        next
+      end
+      image = inst.image(missing_style)
+      begin
+        actual = open(image)
+      rescue
+        rep = true
+      end
+      if actual.is_a?(StringIO) or !rep
+        puts "SKIP #{inst.id}"
+        next
+      end
 
-			puts "REPROCESS #{inst.id}"
+      puts "REPROCESS #{inst.id}"
 
-			begin
-				inst.image.reprocess!(missing_style)
-			rescue
-				# We assume that for images that fail the record is in some way corrupt, 
-				# you may not want to do this.
-				inst.image.destroy 
-			end
-		end
-	end
+      begin
+        inst.image.reprocess!(missing_style)
+      rescue
+        # We assume that for images that fail the record is in some way corrupt,
+        # you may not want to do this.
+        inst.image.destroy
+      end
+    end
+  end
 
 end
 
-```
+{% endhighlight %}
 
 Feel free to use it, and if you make any improvements, please leave a comment!

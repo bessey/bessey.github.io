@@ -14,8 +14,8 @@ So, in comes [SuckerPunch](https://github.com/brandonhilkert/sucker_punch), a ge
 
 This is great! So now we just need to write a load of jobs for each mailer method we want to run in the background, like so:
 
-``` ruby jobs/user_mailer_job.rb
-
+{% highlight ruby %}
+# jobs/user_mailer_job.rb
 class UserRegistrationMailerJob
   include SuckerPunch::Job
 
@@ -23,14 +23,14 @@ class UserRegistrationMailerJob
     UserMailer.registration(user).deliver
   end
 end
-
-```
+{% endhighlight %}
 
 ### Refactor, refactor, refactor!
 
 Clean as this DSL is, its clearly going to get unwieldy. It would be much nicer to be able to have a job that could handle *any* email for *any* mailer. Fortunately this isn't too hard to achieve with just a pinch of meta-programming:
 
-``` ruby jobs/async_mailer_job.rb
+{% highlight ruby %}
+# jobs/async_mailer_job.rb
 class AsyncMailerJob
   include SuckerPunch::Job
 
@@ -40,9 +40,9 @@ class AsyncMailerJob
     mailer.send(method, *args).deliver
   end
 end
-```
+{% endhighlight %}
 
-Now we can slightly modify our existing mailer calls slightly to achieve the same effect as before, without a specific job for each of them: 
+Now we can slightly modify our existing mailer calls slightly to achieve the same effect as before, without a specific job for each of them:
 
 `AsyncMailerJob.new.async.perform(UserMailer, :registration, user)`
 
@@ -50,7 +50,8 @@ Now we can slightly modify our existing mailer calls slightly to achieve the sam
 
 Hmmm, it seems we can do a little better than that though. The syntax is a little ugly, wouldn't it be nice if all we had to do to run a mailer asynchronously was (like with SuckerPunch jobs) add an `.async` call before calling the message method? If we knock the meta-programming dial up a notch this isn't actually too difficult. First up we need to build a module that defines the `.async` method on a mailer, lets not worry about whats going in there for now:
 
-``` ruby async_mailer.rb
+{% highlight ruby %}
+# async_mailer.rb
 
 module AsyncMailer
   module ClassMethods
@@ -64,12 +65,12 @@ module AsyncMailer
   end
 
 end
-
-```
+{% endhighlight %}
 
 Nothing too crazy yet, just using the `included` callback to allow a module to define methods on the class (as opposed to instances of the class). So what's going in `async`? Lets look at the `AsyncMailerJobRunner` to find out:
 
-``` ruby ruby async_mailer_job_runner.rb
+{% highlight ruby %}
+# async_mailer_job_runner.rb
 class AsyncMailerJobRunner
   def initialize(mailer)
     @mailer = mailer
@@ -79,26 +80,27 @@ class AsyncMailerJobRunner
     AsyncMailerJob.new.async.perform(@mailer, meth, *args)
   end
 end
-
-```
+{% endhighlight %}
 
 Remember `async` has to return an object that **acts like a mailer** while actually running the mailer commands asynchronously. To do that, it effectively mocks a mailer, delegating all messages not to the mailer, but instead to the `AsyncMailerJob` we wrote earlier. Thanks to `method_missing` we don't have to worry about which mailer method is called, and thanks to splat `*args` we don't have to worry about that method's footprint. Meta-programming at its most finest!
 
 I hope all that was helpful to you. If you see any improvements or errata please throw me a comment! For the lazier here's the source all together in its entirety:
 
-``` ruby mailers/async_mailer.rb
+{% highlight ruby %}
+# mailers/async_mailer.rb
+
 # Gives an ActionMailer the ability to run any method asynchronously by simply
-# prepending an .async call. 
-# 
+# prepending an .async call.
+#
 # Example:
 #   MyMailer.async.new_user_email(user)
 
 module AsyncMailer
-  # Takes care of transforming an ActionMailer method call into a SuckerPunch 
+  # Takes care of transforming an ActionMailer method call into a SuckerPunch
   # perform call.
-  # 
+  #
   # Example:
-  #   MyMailer.new_user_email(user) 
+  #   MyMailer.new_user_email(user)
   # becomes
   #   AsyncMailerJob.new.async.perform(MyMailer, :new_user_email, user)
 
@@ -133,6 +135,6 @@ module AsyncMailer
   end
 
 end
-```
+{% endhighlight %}
 
 Enjoy!

@@ -12,16 +12,17 @@ We use Capistrano for deployment, so making sure we could get Sunspot to automat
 
 <!-- more -->
 
-``` ruby deploy.rb
+{% highlight ruby %}
+# deploy.rb
 
 namespace :solr do
   desc "start solr"
-  task :start, :roles => :app, :except => { :no_release => true } do 
+  task :start, :roles => :app, :except => { :no_release => true } do
     run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake sunspot:solr:start"
   end
 
   desc "stop solr"
-  task :stop, :roles => :app, :except => { :no_release => true } do 
+  task :stop, :roles => :app, :except => { :no_release => true } do
     run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake sunspot:solr:stop"
   end
 
@@ -40,10 +41,10 @@ namespace :solr do
     run "ln -s #{shared_path}/solr/pids/ #{release_path}/solr/pids"
   end
 end
- 
+
 after "deploy:update_code", "solr:symlink"
 
-```
+{% endhighlight %}
 
 You'll notice that the reindex task is a little weird in that it doesn't do what it should! I ran into the problem that Capistrano does not send keystrokes through to the remote machine, and Solr asks for a confirmation when reindexing, leaving you unable to "confirm". There is a [pull request to fix this](https://github.com/sunspot/sunspot/pull/370) in the [Sunspot repo](https://github.com/sunspot/sunspot) so do have a look there. At time of writing it hasn't been merged, and I haven't tested it, so I can't confirm it's solved. In the meantime as you can see, my 'solution' has been to print out the command that Capistrano *would* run, and SSH into my production server and run it myself. Not ideal, but you shouldn't be doing a full reindex to often anyways.
 
@@ -51,7 +52,8 @@ The main point of these Capistrano tasks is to ensure that `/path_to_my_app/solr
 
 Lastly, here's my `sunspot.yml` config. I don't think it's anything special, but just in case it's of any use to anyone, here she is:
 
-``` yaml sunspot.yml
+{% highlight yaml %}
+# sunspot.yml
 
 development:
   solr:
@@ -73,7 +75,7 @@ production:
     log_level: WARNING
   auto_commit_after_request: true  
 
-``` 
+{% endhighlight %}
 
 I hope this post is of some help to someone out there! And equally, if you see anything that makes you go "Sweet jesus, this guy has no idea what he's doing", do tell me, because you're almost certainly right!
 
