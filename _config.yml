@@ -9,3 +9,5 @@ github_username:  bessey
 
 # Build settings
 markdown: kramdown
+# Custom
+permalink: /blog/:year/:month/:day/:title/
