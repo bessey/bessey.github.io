@@ -10,8 +10,8 @@ layout: default
     </div>
     <div class="info-column">
       <p>
-        Hey, I'm Matt, a Software Engineer currently based in San Francisco. I work for
-        <a href="https://www.caring.com">Caring.com</a> primarily in Ruby on Rails, React, and Ember
+        Hey, I'm Matt, a Software Engineer currently based in the UK. I work for
+        <a href="https://www.caring.com">Caring.com</a> primarily in Ruby on Rails, and React
       </p>
       <ul>
         <li class="social">
@@ -36,7 +36,7 @@ layout: default
   <h1 class="page-heading">Recent Posts</h1>
 
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit: 3 %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 

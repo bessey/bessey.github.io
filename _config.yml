@@ -1,9 +1,9 @@
 # Site settings
 title: Matt Bessey
 email: bessey@gmail.com
-description: Web Dev / Nerd / Californian Tourist
+description: Technical blog of a Rails + React + GraphQL engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://bessey.io" # the base hostname & protocol for your site
+url: "https://bessey.io" # the base hostname & protocol for your site
 twitter_username: mjhbessey
 github_username:  bessey
 
