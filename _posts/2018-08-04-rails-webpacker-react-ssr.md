@@ -20,7 +20,7 @@ But first, let me explain what I mean by "no Node server required"... After all,
 
 <!-- more -->
 
-I should note, Hypernova has one pretty important constraint: it is synchronous. What this means in practice is **you must pre-fetch critical data in Ruby land**. If you don't do this, at best you'll be server side rendering a loading screen. This is a best practice anyway, since it means even _without_ SSR your component is hydrated with data, and can immediately render meaningful content without loading screens etc. How to achieve this is outside the scope of this post, but for those using GraphQL in their React code, I will write up a post detailing how I handle this in the future.
+I should note, Hypernova has one pretty important constraint: it is synchronous. What this means in practice is **you must pre-fetch critical data in Ruby land**. If you don't do this, at best you'll be server side rendering a loading screen. This is a best practice anyway, since it means even _without_ SSR your component is hydrated with data, and can immediately render meaningful content without loading screens etc. How to achieve this is outside the scope of this post, but [for those using GraphQL for data fetching in their React code, check out this post]({{ site.baseurl }}{% post_url 2018-08-05-apollo-graphql-prefetching %}).
 
 
 <small>
