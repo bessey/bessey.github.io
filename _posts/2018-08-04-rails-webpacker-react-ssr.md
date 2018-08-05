@@ -6,26 +6,26 @@ comments: true
 categories: ruby rails react hypernova ssr "server side rendering"
 ---
 
-What we're going to go through in this post is:
 
-1. Installing [Webpacker](https://github.com/rails/webpacker) 3.4.1, in a Rails 4.2 app, if you have Webpacker installed, you can skip this
-2. Install [Hypernova Ruby Client](https://github.com/airbnb/hypernova-ruby), initially just _client side_ rendering React components
-3. Configure Webpacker + [Hypernova _Server_](https://github.com/airbnb/hypernova), to support rendering those same components _server side_
-4. Add health checks, so we know things are working in production
+I recently discovered [Hypernova](https://github.com/airbnb/hypernova-ruby), a wonderful tool from Airbnb, making the unimaginable possible: server side rendered React components, in a Rails app, with *no Node server required in development, or even production*.
+
+In the post, I'll walk you through how to make this a reality in four steps:
+
+1. Installing [Webpacker](https://github.com/rails/webpacker) 3.4.1, in a Rails 4.2+ app
+2. Installing [Hypernova Ruby Client](https://github.com/airbnb/hypernova-ruby), initially just _client side_ rendering React components
+3. Configuring Webpacker + [Hypernova _Server_](https://github.com/airbnb/hypernova), to support rendering those same components _server side_
+4. Adding health checks, so we know things are working in production
+
+But first, let me explain what I mean by "no Node server required"... After all, if you want to do server side rendering, you need to run a Node process on your server, so how can you not have a dependency on Node? Well, the architecture of [Hypernova](https://github.com/airbnb/hypernova-ruby) is such that during render, if a connection cannot be quickly established with the Node process, or the process errors during render, it falls back to the usual client side rendering approach. Coming from a Rails shop that over the years has dipped its toes further and further into JS heavy frontend, this is a great comfort to me. I am not a Node guy, I don't have anything against Node, but I definitely don't have expertise in it. So if I can have the benefits of SSR, without adding points of failure, and without massive increase in app complexity, thats a dream come true! Its also great for development; as another engineer, you can come into this project, edit a SSR React component, and check it in your browser, all just from a `rails server` command.
 
 <!-- more -->
 
-<small>
-_This post is adapted from [another splendid one](https://qiita.com/KeitaMoromizato/items/ea9cf6e787d851ed61e6) by [Keita Moromizato](https://qiita.com/KeitaMoromizato), updated with the (current) latest version of Webpacker, and some deviations for my needs. Thanks Keita! We've never met, and I don't speak Japanese, but your post made this possible :D_
-</small>
-
-### Some Background
-
-I recently discovered [Hypernova](https://github.com/airbnb/hypernova-ruby), a wonderful tool Airbnb built, making the unimaginable possible: server side rendered React code, in a Rails app, with *no hard dependency on running a Node process in development, or even production*.
-
-Let me explain what I mean by that... After all, if you want to do server side rendering, you need to run a Node process on your server, so how can you not have a dependency on Node? Well, the architecture of [Hypernova](https://github.com/airbnb/hypernova-ruby) is such that during render, if a connection cannot be quickly established with the Node process, or the process errors during SSR, we fall back to the usual client side rendering approach. Coming from a Rails shop that (like many) over the years has dipped its toes further and further into JS heavy frontend, this is a great comfort to me. I am not a Node guy, I don't have anything against Node, but I definitely don't have expertise in it. So if I can have the benefits of SSR, without the associated risks / points of failure, thats a dream come true! Its also great for development. As another Rails shop engineer, you can come into this project, edit a React component, and check it in your browser, all just from a `rails server` command.
-
 I should note, Hypernova has one pretty important constraint: it is synchronous. What this means in practice is **you must pre-fetch critical data in Ruby land**. If you don't do this, at best you'll be server side rendering a loading screen. This is a best practice anyway, since it means even _without_ SSR your component is hydrated with data, and can immediately render meaningful content without loading screens etc. How to achieve this is outside the scope of this post, but for those using GraphQL in their React code, I will write up a post detailing how I handle this in the future.
+
+
+<small>
+_This post is adapted from [another splendid one](https://qiita.com/KeitaMoromizato/items/ea9cf6e787d851ed61e6) by [Keita Moromizato](https://qiita.com/KeitaMoromizato), updated with the (current) latest version of Webpacker, and some deviations for my needs. Thanks Keita! We've never met, and I don't speak Japanese, but I'm standing on your shoulders here_ 😄
+</small>
 
 ### Step 1: Webpacker
 
