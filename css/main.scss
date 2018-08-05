@@ -67,3 +67,12 @@ pre, code {
 small {
     display: inline-block;
 }
+
+$highlight-negative-margin: 40px;
+
+.highlighter-rouge .highlight {
+    @media only screen and (min-width: 1000px) {
+        margin-left: $highlight-negative-margin * -1;
+        margin-right: $highlight-negative-margin * -1;
+    }
+}
