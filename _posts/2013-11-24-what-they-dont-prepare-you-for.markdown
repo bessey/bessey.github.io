@@ -3,7 +3,7 @@ layout: post
 title: "What they don't prepare you for"
 date: 2013-11-24 15:06
 comments: true
-categories: svip, america, chocolate
+categories: svip america chocolate
 ---
 
 Time for some serious business. Buzzfeed level serious. Today we're talking about something a Brit holds dear and oft claims Americans do not. Today we're talking about... **chocolate**. One of the many things friends and family repeatadly warn you of before flying out is invariably how shit the chocolate in America is. "They put weird stuff in it! Anti melting agents!" they say. Well of course, they're right. And you would to if you wanted to eat chocolate as opposed to brown peanut soup when you opened your Snickers wrapper. But that's not the crux of the chocolate issue. No there is in fact an entirely different offender that no one warns you of...

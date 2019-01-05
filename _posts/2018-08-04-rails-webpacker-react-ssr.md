@@ -3,7 +3,13 @@ layout: post
 title: "Rails + React Server Side Rendering, with Webpacker + Hypernova"
 date: 2018-08-04 17:32
 comments: true
-categories: ruby rails react hypernova ssr "server side rendering"
+categories:
+  - ruby
+  - rails
+  - react
+  - hypernova
+  - ssr
+  - server side rendering
 ---
 
 

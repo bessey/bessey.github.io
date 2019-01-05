@@ -3,7 +3,7 @@ layout: post
 title: "I, Car"
 date: 2014-02-12 23:20
 comments: true
-categories: thoughts, futurism
+categories: thoughts futurism
 ---
 
 The topic that's got me - and it seems a great deal of others - hot under the collar lately is that of the 'self driving' car. As Google and others further the technology necessary for a world free from steering wheels, one can't help but wonder just what that world will be like. Many have dabbled in this topic but I hope to raise some points here I've not myself heard.

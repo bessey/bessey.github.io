@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<h1>Posts Archive</h1>
+<p>
+  Here's everything I ever wrote. God help you.
+</p>
+{% for post in site.posts %}
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p>
+        <strong>{{ post.date | date: "%B %e, %Y" }}</strong>
+        <br/>
+        <small>
+          {{ post.categories | join: ", " }}
+        </small>
+    </p>
+    <p>
+      {{ post.content | strip_html | truncate: 300 }}
+    </p>
+{% endfor %}

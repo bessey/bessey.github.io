@@ -14,6 +14,8 @@ I'm going to assume you've already [set up Hypernova with Rails]({{ site.baseurl
 3. Extracting this GraphQL data for rehydration on the client's Apollo Client
 4. Server side rendering your component with this pre-fetched data included
 
+<!-- more -->
+
 Throughout this I will use snippets of code from an example repo I put together, occasionally modified for brevity. If you prefer to see a complete example up front, see [my example repo on GitHub](https://github.com/bessey/hypernova_apollo_rails).
 
 ### 1. Understanding the Hypernova Renderer

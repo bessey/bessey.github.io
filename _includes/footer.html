@@ -10,6 +10,9 @@
           <li>{{ site.title }}</li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
+        Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+        <br/>
+        View <a href="{{ "/archive" | prepend: site.baseurl }}">Archives</a>
       </div>
 
       <div class="footer-col footer-col-2">
@@ -32,7 +35,6 @@
         <p>{{ site.description }}</p>
       </div>
     </div>
-
   </div>
 
 </footer>
