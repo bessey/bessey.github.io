@@ -6,6 +6,8 @@ comments: true
 categories: ruby rails react apollo graphql
 ---
 
+**UPDATE: This post is largely made redundant by my newer post on [how to perform pre-fetching of Apollo GraphQL data _in_ Hypernova, no Ruby necessary](2019-01-02-apollo-graphql-hypernova).**
+
 In a previous post I talked about how I set up [server side rendering of React components in Rails with Hypernova]({{ site.baseurl }}{% post_url 2018-08-04-rails-webpacker-react-ssr %}). One detail I skimmed over in that post was _how_ I got the data dependencies of our React components in Ruby-land. We're a React + GraphQL shop (via [Apollo Client](https://github.com/apollographql/apollo-client)), and following GraphQL best practices, our data requirements are [colocated with the components that need the data](https://www.apollographql.com/docs/react/advanced/fragments.html#colocating-fragments), so this is a pretty tough problem. At first this seemed unsolvable, but thanks to some amazing tooling from the Apollo team, it can be done with surprising ease, and best of all no code duplication.
 
 In this post I will walk you through how to extract your React components' GraphQL queries, fragments and all, into a format a Rails app can read, run, enabling full data hydration and server side rendering. While I am using Rails and React, **the principles of this tutorial can be applied to any server language with a GraphQL client, and to any JS framework using Apollo Client** or (I believe) any GraphQL JS client that supports denoting queries with the `gql` tag.
