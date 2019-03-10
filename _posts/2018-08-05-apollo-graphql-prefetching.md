@@ -11,7 +11,7 @@ categories:
   - graphql
 ---
 
-**UPDATE: This post has been made redundant by my discovery of a simpler approach. Please see: [Server Side Rendering for React + Apollo GraphQL Client](2019-01-02-apollo-graphql-hypernova).**
+**UPDATE: This post has been made redundant by my discovery of a simpler approach. Please see: [Server Side Rendering for React + Apollo GraphQL Client]({% post_url 2019-01-02-apollo-graphql-hypernova %}).**
 
 In a previous post I talked about how I set up [server side rendering of React components in Rails with Hypernova]({{ site.baseurl }}{% post_url 2018-08-04-rails-webpacker-react-ssr %}). One detail I skimmed over in that post was _how_ I got the data dependencies of our React components in Ruby-land. We're a React + GraphQL shop (via [Apollo Client](https://github.com/apollographql/apollo-client)), and following GraphQL best practices, our data requirements are [colocated with the components that need the data](https://www.apollographql.com/docs/react/advanced/fragments.html#colocating-fragments), so this is a pretty tough problem. At first this seemed unsolvable, but thanks to some amazing tooling from the Apollo team, it can be done with surprising ease, and best of all no code duplication.
 
