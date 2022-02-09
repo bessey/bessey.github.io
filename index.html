@@ -3,34 +3,40 @@ layout: default
 ---
 
 <div class="home">
-
   <div class="flex-container">
     <div class="img-column">
       <img class="me" src="{{ site.baseurl }}/images/me.jpg" />
     </div>
     <div class="info-column">
       <p>
-        Hey, I'm Matt, a freelance Software Engineer based in the UK. I work primarily in Ruby on Rails, and React
+        Hey, I'm Matt, a Principal Engineer at
+        <a href="https://immersivelabs.com/">Immersive Labs</a> in the UK. I
+        work primarily in Ruby on Rails / React / AWS / K8s
       </p>
       <ul>
         <li class="social">
           <span class="social-type">e:</span>
-          <a class="social-href" href="mailto:bessey@gmail.com">bessey@gmail.com</a>
+          <a class="social-href" href="mailto:bessey@gmail.com"
+            >bessey@gmail.com</a
+          >
         </li>
         <li class="social">
           <span class="social-type">ln:</span>
-          <a class="social-href" href="https://www.linkedin.com/in/mattbessey">mattbessey</a>
+          <a class="social-href" href="https://www.linkedin.com/in/mattbessey"
+            >mattbessey</a
+          >
         </li>
         <li class="social">
           <span class="social-type">t:</span>
-          <a class="social-href" href="https://twitter.com/mjhbessey">@mjhbessey</a>
+          <a class="social-href" href="https://twitter.com/mjhbessey"
+            >@mjhbessey</a
+          >
         </li>
         <li class="social">
           <span class="social-type">cv:</span>
           <a class="social-href" href="/matt-bessey-cv.pdf">read / download</a>
         </li>
       </ul>
-
     </div>
   </div>
 
@@ -40,15 +46,16 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts limit: 3 %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {{post.excerpt}}
-      </li>
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"
+          >{{ post.title }}</a
+        >
+      </h2>
+      {{post.excerpt}}
+    </li>
     {% endfor %}
   </ul>
-
 </div>
