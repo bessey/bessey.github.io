@@ -1,9 +1,9 @@
 # Site settings
-title: Matt Bessey
+title: Matt Bessey's Blog
 email: bessey@gmail.com
-description: Technical blog of a Rails + React + GraphQL engineer
+description: Technical blog of a full stack software engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://bessey.io" # the base hostname & protocol for your site
+url: "https://bessey.dev" # the base hostname & protocol for your site
 twitter_username: mjhbessey
 github_username:  bessey
 
@@ -16,6 +16,11 @@ permalink: /blog/:year/:month/:day/:title/
 disqus_short_name: besseysblog
 disqus_show_comment_count: false
 
-google_analytics_tracking_id: UA-39945482-1
+# google_analytics_tracking_id: UA-39945482-1
 
 excerpt_separator: <!-- more -->
+
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
