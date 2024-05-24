@@ -215,6 +215,15 @@
 .post-content {
     margin-bottom: $spacing-unit;
 
+    // Prefer not to use this though, its the same size as the post title
+    h1 {
+        font-size: 38px;
+
+        @include media-query($on-laptop) {
+            font-size: 32px;
+        }
+    }
+
     h2 {
         font-size: 32px;
 
