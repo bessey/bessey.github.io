@@ -78,7 +78,7 @@ query {
 
 I just tested this attack against a **very** popular website’s GraphQL API explorer and got a 500 response back after 10 seconds. I just ate 10 seconds of someone’s CPU time running this (whitespace removed) **128 byte** query.
 
-A common mitigation[1] for this attack is to
+A common mitigation[^1] for this attack is to
 
 1. Estimate the complexity of resolving **every single field in the schema**, and abandon queries that exceed some maximum complexity value
 2. Capture the actual complexity of the run query and take it out of bucket of credits that resets at some interval
@@ -225,7 +225,7 @@ To be up front, I am definitely early in the [hype cycle](https://en.wikipedia.o
 1. Control all your clients
 2. Have ≤3 clients
 3. Have a client written in a statically typed language
-4. Have a mixture of languages across server and clients[2]
+4. Have a mixture of languages across server and clients[^2]
 
 You are probably better off reaching for an **OpenAPI 3.1** compliant JSON REST API.
 
@@ -243,6 +243,6 @@ For those working in statically typed backend languages, the recent introduction
 
 To me, it seems like powerful **and** simpler options are here, and I’m excited to learn their drawbacks 😄
 
-[1] Persisted queries are also a mitigation for this and many attacks, but if you actually want to expose a customer facing GraphQL API, persisted queries are not an option.
+[^1]: Persisted queries are also a mitigation for this and many attacks, but if you actually want to expose a customer facing GraphQL API, persisted queries are not an option.
 
-[2] Otherwise a language specific solution like [tRPC](https://trpc.io/) might be a better fit.
+[^2]: Otherwise a language specific solution like [tRPC](https://trpc.io/) might be a better fit.
