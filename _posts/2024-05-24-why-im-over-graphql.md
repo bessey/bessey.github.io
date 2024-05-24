@@ -10,7 +10,10 @@ GraphQL is an incredible piece of technology that has captured a lot of mindshar
 
 However, as the years have gone on and I have had the opportunity to deploy to environments where non functional requirements like security, performance, and maintainability were more of a concern, my perspective has changed. In this article I would like to take you through why today, **I would not recommend GraphQL to most people**.
 
+<!-- more -->
+
 Throughout I will use Ruby code with the excellent [graphql-ruby](https://graphql-ruby.org/) library for examples, but I believe many of these problems are ubiquitous across choice of language / GraphQL library.
+
 
 If you know of better solutions and mitigations, please do leave a comment. Now, lets begin…
 
