@@ -24,15 +24,15 @@ I think this is the most widely understood risk of GraphQL, so I won’t go into
 
 ```graphql
 query {
-	user(id: 321) {
-		handle # ✅ I am allowed to view Users public info
-		email # 🛑 I shouldn't be able to see their PII just because I can view the User
-	}
+  user(id: 321) {
+    handle # ✅ I am allowed to view Users public info
+    email # 🛑 I shouldn't be able to see their PII just because I can view the User
+  }
   user(id: 123) {
     blockedUsers {
-	    # 🛑 And sometimes I shouldn't even be able to see their public info,
-	    # because context matters!
-	    handle
+      # 🛑 And sometimes I shouldn't even be able to see their public info,
+      # because context matters!
+      handle
     }
   }
 }
@@ -97,17 +97,17 @@ type Tag {
 }
 
 query {
-	tag(name: "security") {
-	  relatedTags {
-			relatedTags {
-			  relatedTags {
-					relatedTags {
-					  relatedTags { name }
-		      }
-		    }
-		  }
-		}
-	}
+  tag(name: "security") {
+    relatedTags {
+      relatedTags {
+        relatedTags {
+          relatedTags {
+            relatedTags { name }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -146,14 +146,14 @@ Meanwhile, in REST, we can generally hoist nested N+1 queries up to the controll
 ```ruby
 class BlogsController < ApplicationController
   def index
-	  @latest_blogs = Blog.limit(25).includes(:author, :tags)
-	  render json: BlogSerializer.render(@latest_blogs)
+    @latest_blogs = Blog.limit(25).includes(:author, :tags)
+    render json: BlogSerializer.render(@latest_blogs)
   end
 
   def show
-	  # No prefetching necessary here since N=1
-	  @blog = Blog.find(params[:id])
-	  render json: BlogSerializer.render(@blog)
+    # No prefetching necessary here since N=1
+    @blog = Blog.find(params[:id])
+    render json: BlogSerializer.render(@blog)
   end
 end
 ```
@@ -170,8 +170,8 @@ end
 
 class UserPolicy < ApplicationPolicy
   def view_pii?
-		# Oh no, I hit the DB to fetch the user's friends
-	  user.friends_with?(record)
+    # Oh no, I hit the DB to fetch the user's friends
+    user.friends_with?(record)
   end
 end
 ```
@@ -180,8 +180,8 @@ end
 query {
   me {
     friends { # returns N Users
-	    handle
-	    birthday # runs UserPolicy#view_pii? N times
+      handle
+      birthday # runs UserPolicy#view_pii? N times
     }
   }
 }
