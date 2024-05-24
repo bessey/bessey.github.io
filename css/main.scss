@@ -81,11 +81,8 @@ strong {
     font-weight: 600;
 }
 
-$highlight-negative-margin: 40px;
-
-.highlighter-rouge .highlight {
-    @media only screen and (min-width: 1000px) {
-        margin-left: $highlight-negative-margin * -1;
-        margin-right: $highlight-negative-margin * -1;
+.highlight {
+    pre, code {
+      background: #2d2b40;
     }
-}
+  }
