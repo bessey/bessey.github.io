@@ -232,7 +232,7 @@ Ok, end of the rant. What would I recommend instead? To be up front, I am defini
 3. Have a client written in a statically typed language
 4. Are using >1 language across the server and clients[^2]
 
-You are probably better off reaching for an **OpenAPI 3.1** compliant JSON REST API. Tooling in this area has improved a lot since GraphQL came on the scene. If, as in my experience, the main thing your frontend devs like about GraphQL is its self documenting type safe nature, I think this will work well for you. There are many options for generating typed client code even down to [framework specific data fetching libraries](https://orval.dev/overview).
+You are probably better off reaching for an **OpenAPI 3.0+** compliant JSON REST API. Tooling in this area has improved a lot since GraphQL came on the scene. If, as in my experience, the main thing your frontend devs like about GraphQL is its self documenting type safe nature, I think this will work well for you. There are many options for generating typed client code even down to [framework specific data fetching libraries](https://orval.dev/overview).
 
 For Python backends, [FastAPI](https://fastapi.tiangolo.com/) has pioneered generating a typed schema from type hints alone. That is what I have been loving lately. My experience so far is pretty close to “the best parts of what **I** used GraphQL for, without the complexity Facebook needed”.
 
