@@ -232,11 +232,13 @@ Ok, end of the rant. What would I recommend instead? To be up front, I am defini
 3. Have a client written in a statically typed language
 4. Are using >1 language across the server and clients[^2]
 
-You are probably better off reaching for an **OpenAPI 3.0+** compliant JSON REST API. Tooling in this area has improved a lot since GraphQL came on the scene. If, as in my experience, the main thing your frontend devs like about GraphQL is its self documenting type safe nature, I think this will work well for you. There are many options for generating typed client code even down to [framework specific data fetching libraries](https://orval.dev/overview).
+You are probably better off exposing an **OpenAPI 3.0+** compliant JSON REST API. If, as in my experience, the main thing your frontend devs like about GraphQL is its self documenting type safe nature, I think this will work well for you. Tooling in this area has improved a lot since GraphQL came on the scene; there are many options for generating typed client code even down to [framework specific data fetching libraries](https://orval.dev/overview). My experience so far is pretty close to “the best parts of what **I** used GraphQL for, without the complexity Facebook needed”.
 
-For Python backends, [FastAPI](https://fastapi.tiangolo.com/) has pioneered generating a typed schema from type hints alone. That is what I have been loving lately. My experience so far is pretty close to “the best parts of what **I** used GraphQL for, without the complexity Facebook needed”.
+As with GraphQL there's a couple of implementation approach...
 
-For those working in statically typed backend languages, the recent introduction of [TypeSpec](https://typespec.io/) looks to be particularly interesting. With it comes an IMHO quite elegant schema first workflow:
+**Implementation first** tooling generates OpenAPI specs from a typed / type hinted server. [FastAPI](https://fastapi.tiangolo.com/) in Python and [tsoa](https://github.com/lukeautry/tsoa) in TypeScript are examples of this approach. This is the approach I have the most experience with, and I think it works well.
+
+**Specification first** is equivalent to "schema first" in GraphQL. Spec first tooling generates code from a hand written spec. I can't say I've ever looked at an OpenAPI YAML file and thought "gosh I could have written that myself", but the recent release of [TypeSpec](https://typespec.io/) changes things entirely. With it could come a quite elegant schema first workflow:
 
 1. Write a succinct human readable TypeSpec schema
 2. Generate an OpenAPI YAML spec from it
@@ -244,7 +246,9 @@ For those working in statically typed backend languages, the recent introduction
 4. Generate statically typed server handlers for your backend language of choice (e.g. [Go](https://github.com/deepmap/oapi-codegen))
 5. Write an implementation for that handler that compiles, using whatever patterns internally you prefer
 
-To me, it seems like powerful **and** simpler options are here, and I’m excited to learn their drawbacks next 😄
+This approach is less mature but I think has a lot of promise.
+
+To me, it seems like powerful **and** simpler options are here, and I’m excited to learn their drawbacks next 😄.
 
 [^1]: Persisted queries are also a mitigation for this and many attacks, but if you actually want to expose a customer facing GraphQL API, persisted queries are not an option.
 
