@@ -254,4 +254,4 @@ To me, it seems like powerful **and** simpler options are here, and I’m excite
 
 [^2]: Otherwise a language specific solution like [tRPC](https://trpc.io/) might be a better fit.
 
-[^3]: In Ruby I guess since type hints are not popular, AFAIK there is no equivalent approach. Instead we have [rswag](https://github.com/rswag/rswag) which generates OpenAPI specs from request specs. It would be cool if we could build an OpenAPI spec from Sorbet / RBS typed endpoints!
+[^3]: In Ruby, I guess because type hints are not popular,  there is no equivalent approach. Instead we have [rswag](https://github.com/rswag/rswag) which generates OpenAPI specs from request specs. It would be cool if we could build an OpenAPI spec from Sorbet / RBS typed endpoints!
