@@ -236,7 +236,7 @@ You are probably better off exposing an **OpenAPI 3.0+** compliant JSON REST API
 
 As with GraphQL there's a couple of implementation approach...
 
-**Implementation first** tooling generates OpenAPI specs from a typed / type hinted server. [FastAPI](https://fastapi.tiangolo.com/) in Python and [tsoa](https://github.com/lukeautry/tsoa) in TypeScript are examples of this approach. This is the approach I have the most experience with, and I think it works well.
+**Implementation first** tooling generates OpenAPI specs from a typed / type hinted server. [FastAPI](https://fastapi.tiangolo.com/) in Python and [tsoa](https://github.com/lukeautry/tsoa) in TypeScript are good examples of this approach[^3]. This is the approach I have the most experience with, and I think it works well.
 
 **Specification first** is equivalent to "schema first" in GraphQL. Spec first tooling generates code from a hand written spec. I can't say I've ever looked at an OpenAPI YAML file and thought "gosh I could have written that myself", but the recent release of [TypeSpec](https://typespec.io/) changes things entirely. With it could come a quite elegant schema first workflow:
 
@@ -253,3 +253,5 @@ To me, it seems like powerful **and** simpler options are here, and I’m excite
 [^1]: Persisted queries are also a mitigation for this and many attacks, but if you actually want to expose a customer facing GraphQL API, persisted queries are not an option.
 
 [^2]: Otherwise a language specific solution like [tRPC](https://trpc.io/) might be a better fit.
+
+[^3]: In Ruby I guess since type hints are not popular, AFAIK there is no equivalent approach. Instead we have [rswag](https://github.com/rswag/rswag) which generates OpenAPI specs from request specs. It would be cool if we could build an OpenAPI spec from Sorbet / RBS typed endpoints!
