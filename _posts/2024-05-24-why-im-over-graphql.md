@@ -207,7 +207,7 @@ In my experience, in a mature GraphQL codebase, your business logic is forced in
 - Solving resolver data fetching N+1s leads to moving this logic into GraphQL specific dataloaders
 - Leveraging the (lovely) [Relay Connection](https://graphql-ruby.org/pagination/using_connections) pattern leads to moving data fetching logic into GraphQL specific [custom connection objects](https://graphql-ruby.org/pagination/custom_connections)
 
-The net effect of all of this is to meaningfully test your application you **must** extensively test at the integration layer, i.e. by running GraphQL queries. I have found this makes for a painful experience. Any errors in encountered are captured by the framework, leading to the fun task of reading stack traces in JSON GraphQL error responses. Since so much around authorisation and Dataloaders happens inside the framework, debugging is often much harder as the breakpoint you want is not in application code.
+The net effect of all of this is to meaningfully test your application you **must** extensively test at the integration layer, i.e. by running GraphQL queries. I have found this makes for a painful experience. Any errors encountered are captured by the framework, leading to the fun task of reading stack traces in JSON GraphQL error responses. Since so much around authorisation and Dataloaders happens inside the framework, debugging is often much harder as the breakpoint you want is not in application code.
 
 And of course, again, since its a query language you’re going to be writing a lot more tests to confirm that all those argument and field level behaviours we mentioned are working correctly.
 
