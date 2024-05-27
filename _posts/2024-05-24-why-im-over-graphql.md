@@ -238,13 +238,13 @@ As with GraphQL there's a couple of implementation approach...
 
 **Implementation first** tooling generates OpenAPI specs from a typed / type hinted server. [FastAPI](https://fastapi.tiangolo.com/) in Python and [tsoa](https://github.com/lukeautry/tsoa) in TypeScript are good examples of this approach[^3]. This is the approach I have the most experience with, and I think it works well.
 
-**Specification first** is equivalent to "schema first" in GraphQL. Spec first tooling generates code from a hand written spec. I can't say I've ever looked at an OpenAPI YAML file and thought "gosh I could have written that myself", but the recent release of [TypeSpec](https://typespec.io/) changes things entirely. With it could come a quite elegant schema first workflow:
+**Specification first** is equivalent to "schema first" in GraphQL. Spec first tooling generates code from a hand written spec. I can't say I've ever looked at an OpenAPI YAML file and thought "I would love to have written that myself", but the recent release of [TypeSpec](https://typespec.io/) changes things entirely. With it could come a quite elegant schema first workflow:
 
 1. Write a succinct human readable TypeSpec schema
 2. Generate an OpenAPI YAML spec from it
-3. Generate statically typed API client for your frontend language of choice (e.g. [JS / TS](https://orval.dev/overview))
-4. Generate statically typed server handlers for your backend language of choice (e.g. [Go](https://github.com/deepmap/oapi-codegen))
-5. Write an implementation for that handler that compiles, using whatever patterns internally you prefer
+3. Generate statically typed API client for your frontend language of choice (e.g. [TypeScript](https://orval.dev/overview))
+4. Generate statically typed server handlers for your backend language & server framework (e.g. [TypeScript + Express](https://docs.buildwithfern.com/server-boilerplate/server-boilerplate/express-js), [Python + FastAPI](https://docs.buildwithfern.com/server-boilerplate/server-boilerplate/fast-api), [Go + Echo](https://github.com/deepmap/oapi-codegen))
+5. Write an implementation for that handler that compiles, safe in the knowledge that it will be type safe
 
 This approach is less mature but I think has a lot of promise.
 
