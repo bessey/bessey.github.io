@@ -250,8 +250,14 @@ This approach is less mature but I think has a lot of promise.
 
 To me, it seems like powerful **and** simpler options are here, and I’m excited to learn their drawbacks next 😄.
 
+
+_Thanks for reading! See [Hacker News](https://news.ycombinator.com/item?id=40521518) and [Reddit](https://www.reddit.com/r/programming/comments/1d48m1p/why_after_6_years_im_over_graphql/) for more discussion on this article._
+
+
+
 [^1]: Persisted queries are also a mitigation for this and many attacks, but if you actually want to expose a customer facing GraphQL API, persisted queries are not an option.
 
 [^2]: Otherwise a language specific solution like [tRPC](https://trpc.io/) might be a better fit.
 
 [^3]: In Ruby, I guess because type hints are not popular,  there is no equivalent approach. Instead we have [rswag](https://github.com/rswag/rswag) which generates OpenAPI specs from request specs. It would be cool if we could build an OpenAPI spec from Sorbet / RBS typed endpoints!
+
