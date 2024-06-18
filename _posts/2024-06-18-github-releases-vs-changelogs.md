@@ -68,6 +68,6 @@ I think the UX chasm between these two workflows is obvious, and that is why I a
 
 **If you are a Github employee**, please, improve this experience! If Releases are to replace changelogs, as I think they reasonably could, their UX needs to be _better_ than changelogs, not worse. A UI to see changelogs between releases X and Y would be a game changer.
 
-**If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **maintaining a CHANGELOG.md** also. If that's too much effort consider **generating a CHANGELOG.md from your existing Github Releases**. Thanks to the [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do. It can even be configured to ignore certain releases, enabling you to e.g. exclude pre-releases from your trunk changelog.
+**If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **maintaining a CHANGELOG.md** also. If that's too much effort consider **generating a CHANGELOG.md from your existing Github Releases**. Thanks to [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do. It can even be configured to ignore certain releases, enabling you to e.g. exclude pre-releases from your trunk changelog, but include them on your pre-release branch changelog.
 
 Thanks for reading, and above all, much love to all open source maintainers out there! ❤️
