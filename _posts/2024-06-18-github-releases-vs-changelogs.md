@@ -6,23 +6,23 @@ comments: true
 categories: changelog github ux
 ---
 
-I have noticed a trend recently of library authors on Github forgoing maintaining a [CHANGELOG.md](https://keepachangelog.com/en/1.1.0/) file, in favour of exclusively using Github Releases.
+I have noticed a trend recently of library authors abandoning maintaining a [CHANGELOG.md](https://keepachangelog.com/en/1.1.0/) file, in favour of exclusively using Github Releases.
 
 ![Example of Github repository changelog.md stating that "Release notes are now stored in Github Releases"](/images/changelog/move-to-releases.png)
 
-For a library author, the choice is understandable. It takes an effort to maintain a useful changelog that strikes the right balance of capturing significant changes to library without ending up as a list of every commit. But there's a pretty big problem with this... Github Releases today are a much worse solution to the problems changelogs solved for a library's **users**.
+For a library author, the choice is understandable. A Github Release message contains much the same information as a changelog, so why duplicate effort and risk having no source of truth by maintaining both? But there's a pretty big problem with this: Github Releases today suck UX wise for your **users**.
+
+_**TLDR?** Get the best of both worlds by generating your changelog from your Releases with [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release)!_
 
 <!-- more -->
 
-Please note, throughout this article I will draw on examples from many libraries. I do not intend to target any specific authors, this practice is widespread.
+First off, let me clarify what I use changelogs for, and what I expect of them. By far the most common use case I have for a changelog is when upgrading a library, to understand what significant ([to me](https://xkcd.com/1172/)) changes have occurred between the version I'm on and the version I'm upgrading to.
 
-First off, let me clarify what I use changelogs for, and what I expect of them. By far the most common time I use a changelog is when upgrading a library, to understand what significant changes have occurred between the version I'm on and the version I'm upgrading to. E.g. what changed between `v3.22.0` to `v3.23.8`? Pretty simple stuff, but let's see how the experiences compare between the two approaches as a user.
-
-In both cases, I start by navigating to the Github repo of the library I'm upgrading. From there we diverge...
+Pretty simple stuff, but let's see how the difficulty of completing this task differs between Github Releases and a CHANGELOG.md file.
 
 ### Github Releases
 
-We navigate to the Releases page with one click, where we can see the 10 most recent releases. Most of them are patches, so we only get one minor release on the whole page.
+We navigate to our repository's Releases page, where we can see the 10 most recently released versions. Most of them are patches, so we only get one minor release on the whole page.
 
 ![](/images/changelog/releases-index.png)
 
@@ -44,7 +44,7 @@ So I guess we'll have to return to the index page backwards from the latest vers
 
 Well this is awful. Oh, at least there's a `&page=X` query param. We can use that to skip back and forth through pages honing in on the one with our release version in it. We go to `page=3` and the version is too new. On `page=8` the version is too old. How about `page=5`? Too new again... **Somehow we have gone from upgrading a library to executing a human powered binary search**.
 
-Finally though we do find the version we are on, and can now start paging forwards through the newer versions, checking for breaking and other significant ([to you](https://xkcd.com/1172/)) changes. Even now though we run into an annoying behaviour we need to be aware of. Since releases are ordered chronologically by **publish** date there may be releases "between" versions in the list that do not apply to us because they are not present in the version we are running, because they are from another branch:
+Finally though we do find the version we are on, and can now start paging forwards through the newer versions. Even now though we run into an annoying behaviour we need to be aware of. Since releases are ordered chronologically by **publish** date there may be releases "between" versions in the list that do not apply to us because they are not present in the version we are running, because they are from another branch:
 
 ![](/images/changelog/releases-out-of-order.png)
 
@@ -54,7 +54,7 @@ All in all, quite the ordeal to answer a simple question. So how does this moder
 
 ### CHANGELOG.md
 
-We navigate to the CHANGELOG.md with one click, `Ctrl+F` for our version, type its name into the browser find in page UI, and we are instantly scrolled down to it. If you hate typing, we also have a list of jump links to every version.
+We navigate to our repository's CHANGELOG.md in its root directory, where we can see all versions ever. Next, we `Ctrl+F` for our version, type its name into the browser find in page UI, and we are instantly scrolled down to it. If you prefer mice to keyboards, we also have a list of jump links to every version.
 
 ![](/images/changelog/changelog-ctrl-f.png)
 
@@ -64,8 +64,10 @@ And to see changes between the upgraded version and ours? Scroll up. That's it �
 
 ----
 
-I think the difference in UX of these two workflows speaks for themselves. I have two proposals going forwards...
+I think the UX chasm between these two workflows is obvious, and that is why I am surprised and concerned to see CHANGELOG.md falling out of fashion.
 
-If you are a **Github employee**, please, improve this experience! We have long had a UI for "compare git diff between commits". Now we need a UI for "compare releases diff between (semantic) release tags".
+**If you are a Github employee**, please, improve this experience! If Releases are to replace changelogs, as I think they reasonably could, their UX needs to be _better_ than changelogs, not worse. A UI to see changelogs between releases X and Y would be a game changer.
 
-If you are a **repo maintainer** that has migrated entirely to Github Releases, please consider maintaining a CHANGELOG.md as well. There are excellent resources to help you here [[1](https://keepachangelog.com/en/1.1.0/), [2](https://changelog.md/)].
+**If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **generating a CHANGELOG.md from your existing Github Releases** as well. Thanks to the [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do.
+
+Thanks for reading, and above all, much love to all open source maintainers out there! ❤️

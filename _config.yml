@@ -1,7 +1,7 @@
 # Site settings
-title: Matt Bessey's Blog
+title: Bessey's Blog
 email: bessey@gmail.com
-description: Technical blog of a full stack software engineer
+description: Technical blog of a full stack software engineer, working on all things web since 2013
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bessey.dev" # the base hostname & protocol for your site
 twitter_username: mjhbessey
