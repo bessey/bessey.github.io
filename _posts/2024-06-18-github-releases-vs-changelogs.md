@@ -38,19 +38,19 @@ Great! We have the version we're running now. Now we just need to page forwards 
 
 ![](/images/changelog/releases-search-no-pager.png)
 
-So I guess we'll have to return to the index page backwards from the latest version all the way to the version we are currently on after all. In batches of 10. Fun.
+So I guess we'll have to return to the index page, and page backwards from the latest version all the way to the version we are currently on after all. In batches of 10. Fun.
 
 ![](/images/changelog/releases-pager.png)
 
-Well this is awful. Oh, at least there's a `&page=X` query param. We can use that to skip back and forth through pages honing in on the one with our release version in it. We go to `page=3` and the version is too new. On `page=8` the version is too old. How about `page=5`? Too new again... **Somehow we have gone from upgrading a library to executing a human powered binary search**.
+Well this is awful. Oh, at least there's a `&page=X` query param. We can use that to skip back and forth through pages homing in on the page featuring our version. We go to `page=3` and the last version is too new. On `page=8` the first version is too old. How about `page=5`? Last version too new again... **Somehow we have gone from upgrading a library to executing a human powered binary search** 🤢.
 
-Finally though we do find the version we are on, and can now start paging forwards through the newer versions. Even now though we run into an annoying behaviour we need to be aware of. Since releases are ordered chronologically by **publish** date there may be releases "between" versions in the list that do not apply to us because they are not present in the version we are running, because they are from another branch:
+Eventually we find the right page, and can now start paging forwards through the newer versions, studying the associated notes. Even now though we run into an annoying behaviour we need to be aware of. Since releases are ordered chronologically by **publish** date there may be releases "between" versions in the list that do not apply to us because they are not present in the version we are running, because they are from another branch:
 
 ![](/images/changelog/releases-out-of-order.png)
 
-Mercifully it is possible to suppress pre-releases with `prerelease:false` in the search UI. However, this doesn't solve the issue where older major versions are maintained alongside newer versions.
+Mercifully it is possible to suppress pre-releases with `prerelease:false` in the search UI. However, this doesn't solve the issue where older major versions are maintained alongside newer versions as is common for bigger dependencies like languages and frameworks. In those cases, you just have to skip past these versions.
 
-All in all, quite the ordeal to answer a simple question. So how does this modern clean solution compare to the ancient archaic text file approach?
+All in all, quite the ordeal to complete a seemingly simple task. So how does this *modern clean solution* compare to the *ancient archaic text file* approach?
 
 ### CHANGELOG.md
 
@@ -68,6 +68,6 @@ I think the UX chasm between these two workflows is obvious, and that is why I a
 
 **If you are a Github employee**, please, improve this experience! If Releases are to replace changelogs, as I think they reasonably could, their UX needs to be _better_ than changelogs, not worse. A UI to see changelogs between releases X and Y would be a game changer.
 
-**If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **generating a CHANGELOG.md from your existing Github Releases** as well. Thanks to the [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do.
+**If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **maintaining a CHANGELOG.md** also. If that's too much effort consider **generating a CHANGELOG.md from your existing Github Releases**. Thanks to the [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do. It can even be configured to ignore certain releases, enabling you to e.g. exclude pre-releases from your trunk changelog.
 
 Thanks for reading, and above all, much love to all open source maintainers out there! ❤️
