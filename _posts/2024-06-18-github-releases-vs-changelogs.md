@@ -6,11 +6,11 @@ comments: false
 categories: changelog github ux
 ---
 
-I have noticed a trend recently of library authors abandoning maintaining a [CHANGELOG.md](https://keepachangelog.com/en/1.1.0/) file, in favour of exclusively using Github Releases.
+I have noticed a trend recently of library authors abandoning their [CHANGELOG.md](https://keepachangelog.com/en/1.1.0/) files, in favour of Github Releases.
 
 ![Example of Github repository changelog.md stating that "Release notes are now stored in Github Releases"](/images/changelog/move-to-releases.png)
 
-For a library author, the choice is understandable. A Github Release message contains much the same information as a changelog, so why duplicate effort and risk having no source of truth by maintaining both? But there's a pretty big problem with this: Github Releases today suck UX wise for your **users**.
+For a library author, the choice is understandable. A Github Release message contains much the same information as a changelog, so why duplicate effort and risk having no source of truth by maintaining both? But there's a pretty big problem with this: Github Releases today sucks UX wise for your library's **users**.
 
 _**TLDR?** Get the best of both worlds by generating your changelog from your Releases with [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release)!_
 
