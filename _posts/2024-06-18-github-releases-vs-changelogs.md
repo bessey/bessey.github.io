@@ -2,7 +2,7 @@
 layout: post
 title: "Github Releases are no match for CHANGELOG.md"
 date: 2024-06-18 13:01
-comments: true
+comments: false
 categories: changelog github ux
 ---
 
