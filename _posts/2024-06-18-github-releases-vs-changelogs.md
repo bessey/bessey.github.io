@@ -71,3 +71,6 @@ I think the UX chasm between these two workflows is obvious, and that is why I a
 **If you are a repo maintainer** that has migrated entirely to Github Releases, please consider **maintaining a CHANGELOG.md** also. If that's too much effort consider **generating a CHANGELOG.md from your existing Github Releases**. Thanks to [**rhysd/changelog-from-release**](https://github.com/rhysd/changelog-from-release) this is a pretty simple thing to do. It can even be configured to ignore certain releases, enabling you to e.g. exclude pre-releases from your trunk changelog, but include them on your pre-release branch changelog.
 
 Thanks for reading, and above all, much love to all open source maintainers out there! ❤️
+
+
+_PS I used to have Disqus comments on but going forward I'm disabling them as they are full of really terrible adverts. Please discuss on HN / Reddit / ~Twitter~ X instead._
